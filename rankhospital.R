@@ -4,7 +4,7 @@ rankhospital <- function(state, outcome, num = "best") {
   if (!(state %in% unique(outcome_data$State))) {
     stop("invalid state")
   }
-  #check if outcome passed as an argument is correct. if yes, substract hospital name and outcome value
+  #check if outcome passed as an argument is correct. if yes, subset hospital name and outcome value
   if (outcome == "heart attack") {
     state_outcome_data <- outcome_data[outcome_data$State == state,c(2, 11)]
   } else if (outcome == "heart failure") {
